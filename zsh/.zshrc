@@ -68,7 +68,7 @@ HIST_STAMPS="%D %H:%M:%S"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker emacs git-flow-avh history )
+plugins=(git docker emacs git-flow-avh history kubectl npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,9 +86,15 @@ else
   export EDITOR='emacs'
 fi
 
+# add GO to path
+export PATH=$PATH:/usr/local/go/bin
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+
 export WORKON_HOME=~/.venvs
+# source ~/.venvs/s3/bin/activate
+# source ~/bin/awsvars
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -98,3 +104,7 @@ export WORKON_HOME=~/.venvs
 alias zshconfig="emacs ~/.zshrc"
 alias ohmyzsh="emacs ~/.oh-my-zsh"
 alias wmp="cd ~/docs/src/washmobilepay"
+alias cc=cookiecutter
+alias tf=terraform
+alias dokube="source ~/.venvs/s3/bin/activate; source ~/bin/awsvars"
+alias ec="emacsclient --no-wait"
