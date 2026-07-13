@@ -1,0 +1,73 @@
+private_source:
+  tool: rclone
+  remote: gdrive
+  remote_path: dotfiles-private/
+
+dotfiles:
+  - name: emacs
+    public: true
+    repo_dir: emacs/.emacs.d/
+    platforms:
+      linux:   ~/.emacs.d/
+      macos:   ~/.emacs.d/
+      windows: $APPDATA/.emacs.d/
+
+  - name: zsh
+    public: true
+    repo_dir: zsh/
+    platforms:
+      linux:   ~/.zsh/
+      macos:   ~/.zsh/
+
+  - name: bash
+    public: true
+    repo_dir: bash/
+    platforms:
+      linux:   ~/
+      macos:   ~/
+
+  - name: aws_config
+    public: true
+    repo_dir: aws/
+    platforms:
+      linux:   ~/.aws/
+      macos:   ~/.aws/
+      windows: $USERPROFILE/.aws/
+
+  - name: aws_credentials
+    public: false
+    private_dir: aws/
+    platforms:
+      linux:   ~/.aws/
+      macos:   ~/.aws/
+      windows: $USERPROFILE/.aws/
+
+  - name: kubeconfig
+    public: false
+    private_dir: kube/
+    platforms:
+      linux:   ~/.kube/
+      macos:   ~/.kube/
+      windows: $USERPROFILE/.kube/
+
+  - name: ssh_public
+    public: true
+    repo_dir: ssh/
+    platforms:
+      linux:   ~/.ssh/
+      macos:   ~/.ssh/
+
+  - name: ssh_private
+    public: false
+    private_dir: ssh/
+    platforms:
+      linux:   ~/.ssh/
+      macos:   ~/.ssh/
+
+  - name: git
+    public: true
+    repo_dir: git/
+    platforms:
+      linux:   ~/
+      macos:   ~/
+      windows: $USERPROFILE/
